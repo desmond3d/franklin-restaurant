@@ -1,4 +1,5 @@
 import Reveal from "./reveal";
+import FloatingLeaves from "./floating-leaves";
 
 type Perk = {
   emoji: string;
@@ -43,15 +44,16 @@ export default function WhyStudents() {
   return (
     <section
       id="why-students"
-      className="scroll-mt-24 border-t border-white/10 bg-neutral-900 text-white"
+      className="relative overflow-hidden scroll-mt-24 border-t border-white/10 bg-neutral-900 text-white"
     >
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <FloatingLeaves />
+      <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <Reveal direction="up">
           <header className="text-center">
             <p className="text-xs font-medium uppercase tracking-[0.3em] text-amber-500">
               Campus Favourite
             </p>
-            <h2 className="mt-3 font-serif text-4xl tracking-tight sm:text-5xl">
+            <h2 className="mt-3 font-display text-4xl tracking-tight sm:text-5xl">
               Why Students Love Us
             </h2>
             <p className="mx-auto mt-4 max-w-md text-sm text-neutral-400">

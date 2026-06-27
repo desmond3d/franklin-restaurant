@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "../components/reveal";
+import FloatingLeaves from "../components/floating-leaves";
 
 export const metadata: Metadata = {
   title: "About · Franklin",
@@ -46,6 +47,7 @@ export default function AboutPage() {
     <main className="bg-neutral-950 text-white">
       {/* ---------- Intro ---------- */}
       <section className="relative overflow-hidden">
+        <FloatingLeaves />
         <div className="pointer-events-none absolute -right-32 top-0 h-[30rem] w-[30rem] rounded-full bg-amber-600/15 blur-[120px]" />
         <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-24">
           <Reveal direction="up">
@@ -53,7 +55,7 @@ export default function AboutPage() {
               <p className="text-xs font-medium uppercase tracking-[0.3em] text-amber-500">
                 Our Story
               </p>
-              <h1 className="mt-3 font-serif text-4xl leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+              <h1 className="mt-3 font-display text-4xl leading-tight tracking-tight sm:text-5xl lg:text-6xl">
                 Good food, made for our community.
               </h1>
               <p className="mt-6 max-w-md text-sm leading-relaxed text-neutral-400">
@@ -102,7 +104,7 @@ export default function AboutPage() {
           {STATS.map((stat, i) => (
             <Reveal key={stat.label} direction="up" delay={i * 90}>
               <div className="text-center">
-                <p className="font-serif text-3xl text-amber-400 sm:text-4xl">
+                <p className="font-display text-3xl text-amber-400 sm:text-4xl">
                   {stat.value}
                 </p>
                 <p className="mt-1 text-xs uppercase tracking-widest text-neutral-400">
@@ -115,13 +117,15 @@ export default function AboutPage() {
       </section>
 
       {/* ---------- Values ---------- */}
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <section className="relative overflow-hidden">
+        <FloatingLeaves />
+        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <Reveal direction="up">
           <header className="text-center">
             <p className="text-xs font-medium uppercase tracking-[0.3em] text-amber-500">
               What We Stand For
             </p>
-            <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
+            <h2 className="mt-3 font-display text-3xl tracking-tight sm:text-4xl">
               The Franklin Promise
             </h2>
           </header>
@@ -144,13 +148,15 @@ export default function AboutPage() {
             </Reveal>
           ))}
         </div>
+        </div>
       </section>
 
       {/* ---------- CTA ---------- */}
-      <section className="border-t border-white/10">
+      <section className="relative overflow-hidden border-t border-white/10">
+        <FloatingLeaves />
         <Reveal direction="up">
           <div className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 lg:px-8 lg:py-20">
-            <h2 className="font-serif text-3xl tracking-tight sm:text-4xl">
+            <h2 className="font-display text-3xl tracking-tight sm:text-4xl">
               Hungry already?
             </h2>
             <p className="mx-auto mt-3 max-w-md text-sm text-neutral-400">

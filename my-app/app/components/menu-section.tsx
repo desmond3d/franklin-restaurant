@@ -3,6 +3,7 @@
 import { MENU, type Category, type MenuItem } from "../data/menu";
 import { useCart } from "./cart-context";
 import Reveal from "./reveal";
+import FloatingLeaves from "./floating-leaves";
 
 /** Display order + emoji per category. */
 const CATEGORIES: { name: Category; emoji: string }[] = [
@@ -28,14 +29,18 @@ export default function MenuSection() {
   const { addItem } = useCart();
 
   return (
-    <section id="full-menu" className="bg-neutral-950 text-white">
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <section
+      id="full-menu"
+      className="relative overflow-hidden bg-neutral-950 text-white"
+    >
+      <FloatingLeaves />
+      <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         {/* Heading */}
         <header className="text-center">
           <p className="text-xs font-medium uppercase tracking-[0.3em] text-amber-500">
             Our Menu
           </p>
-          <h2 className="mt-3 font-serif text-4xl tracking-tight sm:text-5xl">
+          <h2 className="mt-3 font-display text-4xl tracking-tight sm:text-5xl">
             Explore the Full Menu
           </h2>
           <p className="mx-auto mt-4 max-w-md text-sm text-neutral-400">
@@ -70,7 +75,7 @@ export default function MenuSection() {
               <div id={slug(cat.name)} className="scroll-mt-24">
                 <h3 className="flex items-center gap-3 sm:gap-4">
                   <span className="text-xl sm:text-2xl">{cat.emoji}</span>
-                  <span className="font-serif text-xl tracking-wide sm:text-2xl">
+                  <span className="font-display text-xl tracking-wide sm:text-2xl">
                     {cat.name}
                   </span>
                   <span className="h-px flex-1 bg-white/10" />

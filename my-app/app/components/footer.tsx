@@ -8,7 +8,7 @@ export default function Footer() {
       >
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-10 text-center sm:px-6 md:flex-row md:text-left lg:px-8">
           <div>
-            <h2 className="font-serif text-2xl tracking-wide sm:text-3xl">
+            <h2 className="font-display text-2xl tracking-wide sm:text-3xl">
               Book a Table
             </h2>
             <p className="mt-1 text-sm text-amber-100">
@@ -36,7 +36,7 @@ export default function Footer() {
             <span className="grid h-9 w-9 place-items-center rounded-full bg-linear-to-br from-amber-600 to-amber-800 text-base font-semibold text-amber-50">
               F
             </span>
-            <span className="font-serif text-xl tracking-[0.2em]">FRANKLIN</span>
+            <span className="font-display text-xl tracking-[0.2em]">FRANKLIN</span>
           </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-neutral-400">
             Bold flavours, fresh ingredients, and a seat at the table you&apos;ll

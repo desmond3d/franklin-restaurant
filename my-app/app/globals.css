@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-outfit);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,9 +35,27 @@ html{
   scroll-behavior: smooth;
 }
 
+/* Gentle floating motion for decorative leaves. */
+@keyframes leafFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-leaf {
+  animation: leafFloat 6s ease-in-out infinite;
+}
+
 /* Respect users who prefer reduced motion. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .animate-leaf {
+    animation: none;
   }
 }

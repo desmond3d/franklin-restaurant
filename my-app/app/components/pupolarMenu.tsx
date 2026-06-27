@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useCart } from './cart-context';
 import { featuredDishes } from '../data/menu';
 import { ShoppingCart } from 'lucide-react';
+import FloatingLeaves from './floating-leaves';
 
 const DISHES = featuredDishes;
 
@@ -12,11 +13,12 @@ export default function PopularMenu() {
   const { addItem } = useCart();
 
   return (
-    <div className='container mx-auto py-8'>
-      <h2 className='text-2xl font-bold text-neutral-400 mb-16 text-center'>
+    <div className='relative overflow-hidden container mx-auto py-8'>
+      <FloatingLeaves />
+      <h2 className='relative text-2xl font-bold text-neutral-400 mb-16 text-center'>
           Popular Dishes
         </h2>
-      <div className=''>
+      <div className='relative'>
         <div
           id='menu'
           className='relative mx-auto max-w-7xl px-6 pb-14 sm:px-10 lg:px-12 '>

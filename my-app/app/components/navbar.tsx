@@ -111,7 +111,7 @@ export default function Navbar() {
             <span className="grid h-9 w-9 place-items-center rounded-full bg-linear-to-br from-amber-600 to-amber-800 text-base font-semibold text-white shadow-sm">
               F
             </span>
-            <span className="font-serif text-xl tracking-[0.2em]">FRANKLIN</span>
+            <span className="font-display text-xl tracking-[0.2em]">FRANKLIN</span>
           </Link>
 
           {/* Desktop links */}
@@ -217,7 +217,7 @@ export default function Navbar() {
         {/* Header */}
         <div className="flex items-center justify-between border-b border-white/10 px-6 py-5">
           <div>
-            <h2 className="font-serif text-lg tracking-wide text-white">
+            <h2 className="font-display text-lg tracking-wide text-white">
               Your Order
             </h2>
             <p className="text-xs uppercase tracking-widest text-amber-400/80">
@@ -312,7 +312,7 @@ export default function Navbar() {
             </div>
             <div className="mb-4 flex items-center justify-between">
               <span className="text-base font-medium text-white">Total</span>
-              <span className="font-serif text-xl text-white">
+              <span className="font-display text-xl text-white">
                 {naira(subtotal)}
               </span>
             </div>

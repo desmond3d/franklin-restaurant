@@ -19,10 +19,10 @@ export default function Hero() {
       <div className='relative mx-auto grid max-w-7xl items-center gap-10 px-4 pb-8 pt-12 sm:px-6 lg:grid-cols-2 lg:gap-6 lg:px-8 lg:pt-20 mt-15'>
         {/* ---- Left: copy ---- */}
         <div className='order-2 lg:order-1'>
-          <h1 className='font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl'>
+          <h1 className='font-display text-5xl font-extrabold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl'>
             it&apos;s not just{' '}
             <span className='text-white'>Food, It&apos;s an</span>{' '}
-            <span className='italic'>Experience.</span>
+            <span className='text-amber-400'>Experience.</span>
           </h1>
 
           <p className='mt-6 max-w-md text-sm leading-relaxed text-neutral-400'>

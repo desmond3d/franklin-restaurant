@@ -1,19 +1,23 @@
 import Image from "next/image";
 import Reveal from "./reveal";
+import FloatingLeaves from "./floating-leaves";
 
 type Review = {
   name: string;
   role: string;
-  img: number;
+  img: string;
   rating: number;
   quote: string;
 };
+
+// Square, face-centred crops. Replace with real customer photos when you have them.
+const FACE = "auto=format&fit=crop&w=160&h=160&q=80&crop=faces";
 
 const REVIEWS: Review[] = [
   {
     name: "Ajiri Samuel",
     role: "Student · FUPRE",
-    img: 12,
+    img: `https://images.unsplash.com/photo-1531384441138-2736e62e0919?${FACE}`,
     rating: 5,
     quote:
       "The jumbo shawarma is unreal for the price. I order on WhatsApp between lectures and it's ready before I get there.",
@@ -21,7 +25,7 @@ const REVIEWS: Review[] = [
   {
     name: "Amara Nwachukwu",
     role: "Regular",
-    img: 5,
+    img: `https://images.unsplash.com/photo-1589156280159-27698a70f29e?${FACE}`,
     rating: 5,
     quote:
       "Special jollof rice tastes like a party every time. Portions are huge and the staff are so friendly.",
@@ -29,7 +33,7 @@ const REVIEWS: Review[] = [
   {
     name: "Esegbona Desmond",
     role: "Student · FUPRE",
-    img: 33,
+    img: `https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?${FACE}`,
     rating: 5,
     quote:
       "Closest thing to home-cooked food near campus. The classic beef burger is my weekend ritual now.",
@@ -37,7 +41,7 @@ const REVIEWS: Review[] = [
   {
     name: "Blessing Ufuoma",
     role: "Food lover",
-    img: 47,
+    img: `https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?${FACE}`,
     rating: 5,
     quote:
       "Fast, affordable, and always fresh. I've never had a bad meal here — the egusi and eba is a must try.",
@@ -45,7 +49,7 @@ const REVIEWS: Review[] = [
   {
     name: "Joshua Ighodaro",
     role: "Student · UNIBEN",
-    img: 14,
+    img: `https://images.unsplash.com/photo-1599566150163-29194dcaad36?${FACE}`,
     rating: 4,
     quote:
       "Great value and the WhatsApp ordering makes everything easy. Tacos special is genuinely the best in Warri.",
@@ -53,7 +57,7 @@ const REVIEWS: Review[] = [
   {
     name: "Chioma Bello",
     role: "Regular",
-    img: 9,
+    img: `https://images.unsplash.com/photo-1531123897727-8f129e1688ce?${FACE}`,
     rating: 5,
     quote:
       "I bring my whole crew here. Big portions, small prices — Franklin just gets students.",
@@ -62,14 +66,18 @@ const REVIEWS: Review[] = [
 
 export default function Reviews() {
   return (
-    <section id="reviews" className="scroll-mt-24 bg-neutral-950 text-white">
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <section
+      id="reviews"
+      className="relative overflow-hidden scroll-mt-24 bg-neutral-950 text-white"
+    >
+      <FloatingLeaves />
+      <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <Reveal direction="up">
           <header className="text-center">
             <p className="text-xs font-medium uppercase tracking-[0.3em] text-amber-500">
               Loved by Locals
             </p>
-            <h2 className="mt-3 font-serif text-4xl tracking-tight sm:text-5xl">
+            <h2 className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl">
               What Our Customers Say
             </h2>
             <p className="mx-auto mt-4 max-w-md text-sm text-neutral-400">
@@ -108,7 +116,7 @@ export default function Reviews() {
               <figcaption className="mt-6 flex items-center gap-3">
                 <span className="relative h-10 w-10 overflow-hidden rounded-full ring-2 ring-white/10">
                   <Image
-                    src={`https://i.pravatar.cc/80?img=${review.img}`}
+                    src={review.img}
                     alt={review.name}
                     fill
                     sizes="40px"
