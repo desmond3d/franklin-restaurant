@@ -16,10 +16,14 @@ export default function Footer() {
             </p>
           </div>
           <a
-            href="tel:+2349090267533"
+            href={`https://wa.me/2349090267533?text=${encodeURIComponent(
+              "Hi Franklin! 👋 I'd like to reserve a table."
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full bg-white px-7 py-3 text-sm font-semibold text-amber-700 transition hover:bg-amber-50"
           >
-            Call to Reserve
+            Reserve on WhatsApp
           </a>
         </div>
       </div>
